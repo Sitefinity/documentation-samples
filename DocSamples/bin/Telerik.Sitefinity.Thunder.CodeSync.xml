@@ -1,0 +1,644 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Sitefinity.Thunder.CodeSync</name>
+    </assembly>
+    <members>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.BaseFiles.BaseFilesHelper.IsSubDirectoryOf(System.IO.DirectoryInfo,System.IO.DirectoryInfo)">
+            <summary>
+            Checks wheter a child directory is a sub directory of another parent directory.
+            </summary>
+            <param name="parentFolder">The parent directory.</param>
+            <param name="childFolder">The child directory.</param>
+            <returns>Returns whether the child directory is a sub directory of the parent directory.</returns>
+        </member>
+        <member name="T:Telerik.Sitefinity.Thunder.CodeSync.BaseFilesManager">
+            <summary>
+            This class is responsible for generating, retriving and deliting base files.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.BaseFilesManager.#ctor">
+            <summary>
+            Contstructor for the BaseFilesManager
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.BaseFilesManager.CreateBaseFilesDirectory(System.String)">
+            <summary>
+            Creates and empty base files directory
+            </summary>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.BaseFilesManager.GetBaseDirectoryPath(System.String)">
+            <summary>
+            Gets the path to the base files directory
+            </summary>
+            <param name="mappedDirectoryPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.BaseFilesManager.DeleteMapping(System.Guid,System.String)">
+            <summary>
+            Deletes the mapping.
+            </summary>
+            <param name="syncItemPath">The sync item path.</param>
+            <param name="mappedDirectoryPath">The mapped directory path.</param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.BaseFilesManager.EnsureBaseFilesDirectoryIsHidden(System.String)">
+            <summary>
+            Hides the base directory. The base directory contains all base files.
+            </summary> 
+            <param name="mappedDirectoryPath">The path to the mapped directory of the currently connected website.</param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.BaseFilesManager.AddItemToRenamedMappings(System.Guid,System.String,System.String,System.String,System.String)">
+            <summary>
+            Adds a mapping to the base mappings xml
+            </summary>
+            <param name="oldItemsPath"></param>
+            <param name="newItemsPath"></param>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.GetItemPathInSyncShot(System.String,System.String)">
+            <summary>
+            Gets the item path as stored into the client sync shot if the item was renamed. Othewise return NULL.
+            </summary>
+            <param name="newPath"></param>
+            <param name="mappedDirectory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.GetMappingsFileInfo(System.String)">
+            <summary>
+            Gets the file info for the mappings file
+            </summary>
+            <param name="mappedDirectory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.DeleteMappingsFile(System.String)">
+            <summary>
+            Deletes the mapping file
+            </summary>
+            <param name="mappedDirectory"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.GetMappings(System.String)">
+            <summary>
+            Gets all mappings
+            </summary>
+            <param name="mappedDirectory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.AddItemToMappings(System.Guid,System.String,System.String,System.String,System.String)">
+            <summary>
+            Calculates and adds a new mapping
+            </summary>
+            <param name="itemOldFullPath"></param>
+            <param name="itemNewFullPath"></param>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.ChangeNewValueInMapping(System.Guid,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Changes the new path in a mapping
+            </summary>
+            <param name="oldRelativePath"></param>
+            <param name="newRelativePath"></param>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.DeleteMappings(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String)">
+            <summary>
+            Deletes the mappings for that files
+            </summary>
+            <param name="syncItems"></param>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.DeleteMapping(System.Guid,System.String)">
+            <summary>
+            Deletes the mappings for that files
+            </summary>
+            <param name="syncItems"></param>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.GetMappingsDocument(System.IO.FileInfo)">
+            <summary>
+            Gets the mappings xml document
+            </summary>
+            <param name="mappingsXml"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.GetNewMappingElement(System.Guid,System.String,System.String)">
+            <summary>
+            Creates new mapping element
+            </summary>
+            <param name="itemPathInSyncShot"></param>
+            <param name="itemNewName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.ChangeNewValueIntoMapping(System.Guid,System.String,System.String,System.String,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Changes the new value in the mappings.
+            </summary>
+            <param name="itemId"></param>
+            <param name="itemPathInSyncShot"></param>
+            <param name="itemOldPath"></param>
+            <param name="itemNewPath"></param>
+            <param name="mappedDirectoryPath"></param>
+            <param name="addMappingIfItDoesntExist"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.FileMappingsManager.UpdateInnerEntries(System.Xml.Linq.XDocument,System.String,System.String,System.Boolean)">
+            <summary>
+            Updates the inner entries in the mappings.
+            </summary>
+            <param name="mappingDocument"></param>
+            <param name="itemNewRelativePath"></param>
+            <param name="itemOldRelativePath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.DirectoryExtensions.DirectoryCopy(System.IO.DirectoryInfo,System.String[],System.Boolean,System.Boolean)">
+            <summary>
+            Copies all the directory contents in another directory
+            </summary>
+            <param name="sourceDirectoryFullPath"></param>
+            <param name="destinationsParamas"></param>
+            <param name="copySubDirs"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.DirectoryExtensions.Move(System.IO.FileSystemInfo,System.String[],System.Boolean)">
+            <summary>
+            Moves a directory or a file to another location.
+            </summary>
+            <param name="systemInfo"></param>
+            <param name="destinationsParamas"></param>
+            <param name="overrideExisting"></param>
+        </member>
+        <member name="T:Telerik.Sitefinity.Thunder.CodeSync.SyncItemToCalculatedSyncItemComparer">
+            <summary>
+            Compares a sync file with a calculates sync file
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.#ctor">
+            <summary>
+            CodeSyncManager constructor
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.IsSyncItemRenamed(System.String,Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem)">
+            <summary>
+            Determines whether file sync item is renamed.
+            </summary>
+            <param name="syncItem">The sync item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.IsSyncItemMoved(System.String,Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem)">
+            <summary>
+            Determines whether file sync item is moved to another location.
+            </summary>
+            <param name="syncItem">The sync item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.GetCodeSyncServerSettings(System.String)">
+            <summary>
+            Get server settings
+            </summary>
+            <param name="serverSyncSettingsFilePhysicalPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.GetLastSyncShot(System.String)">
+            <summary>
+            Get last sync shot
+            </summary>
+            <param name="lastSyncShotFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.SaveCalculatedSyncShot(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncShot,System.String)">
+            <summary>
+            Saves the calculated sync shot
+            </summary>
+            <param name="syncShot"></param>
+            <param name="lastSyncShotFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.CreateEmptyLastSyncShot(System.String,System.String)">
+            <summary>
+            Creates an empty last sync shot file
+            </summary>
+            <param name="mappedDirectoryPath"></param>
+            <param name="lastSyncShotFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.SaveLastSyncShot(System.String,System.String)">
+            <summary>
+            Saves a directry to the last sync shot
+            </summary>
+            <param name="mappedDirectoryPath"></param>
+            <param name="lastSyncShotFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.SaveSyncItemInfoInTheLastSyncShot(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String,System.String)">
+            <summary>
+            Saves a sync files infos in the sync shot
+            </summary>
+            <param name="syncItems"></param>
+            <param name="lastSyncShotFilePath"></param>
+            <param name="mappedDirectoryPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.GetEncapsulatedSyncData(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncDataInfo)">
+            <summary>
+            Get the encapsulates sync data
+            </summary>
+            <param name="syncDataInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.ExtractConflictFilesFromTempFileLocally(System.Collections.Generic.IEnumerable{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String,System.String)">
+            <summary>
+            Extracts conflict files into temp files
+            </summary>
+            <param name="conflicts"></param>
+            <param name="templFilePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.ExtractSyncFileFromZipLocally(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem,Telerik.Sitefinity.Thunder.Zip.ZipFile,System.String)">
+            <summary>
+            Extracts sync file to a temp file
+            </summary>
+            <param name="syncItem"></param>
+            <param name="tempZipFile"></param>
+            <param name="mappedDirectory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.ExtractSyncFileFromZipToASpecifiedFolder(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem,Telerik.Sitefinity.Thunder.Zip.ZipFile,System.String)">
+            <summary>
+            Extracts a file in the path specified.
+            </summary>
+            <param name="syncItem"></param>
+            <param name="tempZipFile"></param>
+            <param name="destinationFolderPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.ExtractSyncFileFromZipToASpecifiedPath(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem,Telerik.Sitefinity.Thunder.Zip.ZipFile,System.String)">
+            <summary>
+            Extracts the sync file form the zip to a given path.
+            </summary>
+            <param name="syncItem"></param>
+            <param name="zipFile"></param>
+            <param name="destinationFullPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.RemoveSyncItems(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String,System.String)">
+            <summary>
+            Removes files from the sync shot form a given directory
+            </summary>
+            <param name="items"></param>
+            <param name="direcotryToExludePath"></param>
+            <param name="mappedSourceDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.GetLocalRemoteMatches(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem})">
+            <summary>
+            Get local remote matches
+            </summary>
+            <param name="localItems"></param>
+            <param name="remoteItems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.DeleteBaseFilesMappingFile(System.String)">
+            <summary>
+            Deletes the base mappings file
+            </summary>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.DeleteItemsMappings(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String)">
+            <summary>
+            Deletes the mappings for the given files
+            </summary>
+            <param name="syncItems"></param>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.DeleteBaseItems(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String)">
+            <summary>
+            Deletes the base files for the given sync files
+            </summary>
+            <param name="syncItems"></param>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.RecalculateSyncShot(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncShot)">
+            <summary>
+            Recalculate a syncshot
+            </summary>
+            <param name="syncShot"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.RecalculateSyncItems(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String)">
+            <summary>
+            Recalculate a given set of sync items.
+            </summary>
+            <param name="items"></param>
+            <param name="sourceDirectoryPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.ApplySyncDataChanges(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.LocalRemoteSyncItemMatch},System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Applies the given syncfiles locally
+            </summary>
+            <param name="syncFiles"></param>
+            <param name="tempFilePath"></param>
+            <param name="mappedDirectoryPath"></param>
+            <param name="lastSyncShotFilePath"></param>
+            <param name="reflectOnBaseFiles"></param>
+            <returns>Failed to apply sync files with errors</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.RenameOrMoveLocalItem(Telerik.Sitefinity.Thunder.CodeSync.Contracts.LocalRemoteSyncItemMatch,System.IO.DirectoryInfo)">
+            <summary>
+            Rename local item or move if it's needed.
+            </summary>
+            <param name="syncItemMatch"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.RenameOrMoveLocalBaseItem(Telerik.Sitefinity.Thunder.CodeSync.Contracts.LocalRemoteSyncItemMatch,System.IO.DirectoryInfo)">
+            <summary>
+            Rename or move lacal base item.
+            </summary>
+            <param name="syncItemMatch"></param>
+            <param name="mappedDirectory"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.RenameOrMoveLocalItem(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem,Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem,System.IO.DirectoryInfo)">
+            <summary>
+            Renames or moves a local item internal
+            </summary>
+            <param name="mappedDirectory"></param>
+            <param name="localSyncItemRealPath"></param>
+            <param name="remoteSyncItemRealPath"></param>
+            <param name="remoteSyncItemType"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.PutFoldersFirst(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.LocalRemoteSyncItemMatch})">
+            <summary>
+            Sorts the matches so that the folders are in the first positions
+            </summary>
+            <param name="localRemoteSyncFileMatches"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.CloneToBaseFiles(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String)">
+            <summary>
+            Create ot replace base files
+            </summary>
+            <param name="list"></param>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.CloneToBaseFiles(System.String,System.String,System.String)">
+            <summary>
+            Clone to base files
+            </summary>
+            <param name="mappedDirectoryPath"></param>
+            <param name="baseFilePath"></param>
+            <param name="realFilePath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.RemoveUnnecessaryFiles(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String)">
+            <summary>
+            Removes all the unnecessary files from the sync process
+            </summary>
+            <param name="list"></param>
+            <param name="mappedDirectoryPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.CheckIfThatItemCanOnlyBeAdded(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem)">
+            <summary>
+            Checks if an item can only be added.
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.ContainsServerPathThatCanNotBeModified(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem)">
+            <summary>
+            Chechs if the path of the item contains some parts that can not be modified on the server
+            </summary>
+            <param name="syncItem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.UpdateFileMappingsWithTheRemoteInfo(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.LocalRemoteSyncItemMatch},System.String)">
+            <summary>
+            Update the mappings if some paths are changed.
+            </summary>
+            <param name="syncItems"></param>
+            <param name="mappedDirectoryPath"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.UpdateFileMappingsWithTheRemoteInfo(Telerik.Sitefinity.Thunder.CodeSync.Contracts.LocalRemoteSyncItemMatch,System.String)">
+            <summary>
+            Update the mappings if some paths are changed.
+            </summary>
+            <param name="mappedDirectoryPath"></param>
+            <param name="localRemoteSyncItemMatch"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.DeleteFromLocalMappings(Telerik.Sitefinity.Thunder.CodeSync.Contracts.LocalRemoteSyncItemMatch,System.String)">
+            <summary>
+            Deletes from local mappings.
+            </summary>
+            <param name="localRemoteSyncItemMatch">The local remote sync item match.</param>
+            <param name="mappedDirectoryPath">The mapped directory path.</param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.UpdateFileMappingsWithRemoteInfo(Telerik.Sitefinity.Thunder.CodeSync.Contracts.LocalRemoteSyncItemMatch,System.String)">
+            <summary>
+            Updates the file mappings with remote info.
+            </summary>
+            <param name="localRemoteSyncItemMatch">The local remote sync item match.</param>
+            <param name="mappedDirectoryPath">The mapped directory path.</param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.RemoveFromMappingsIfServerAndLocalAreRenamedOrRemoved(Telerik.Sitefinity.Thunder.CodeSync.Contracts.LocalRemoteSyncItemMatch,System.String)">
+            <summary>
+            Removes from mappings if server and local are renamed or removed.
+            </summary>
+            <param name="localRemoteSyncItemMatch">The local remote sync item match.</param>
+            <param name="mappedDirectoryPath">The mapped directory path.</param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.CodeSyncManager.GetClientSyncShotFromCache(System.String,Telerik.Sitefinity.Thunder.CodeSync.SyncSerializer)">
+            <summary>
+            Get the client syncshot from the cache.
+            </summary>
+            <param name="lastSyncShotFilePath"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Sitefinity.Thunder.CodeSync.DiffMergeToolStarter">
+            <summary>
+            This class is responsible for starting the DiffMerge tool that is used by the CodeSync feature.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.DiffMergeToolStarter.StartDiffToolProcess(System.String,System.String,System.String,System.Action{System.Boolean})">
+            <summary>
+            This method starts the Diff tool process by given source file path and local file path.
+            </summary>
+            <param name="sourceFilePath">Path to the source file. </param>
+            <param name="localFilePath">Path to the local file. </param>
+            <param name="visualStudioVersion">The Visual Studio version used by the current user. </param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.DiffMergeToolStarter.StartMergeToolProcess(System.String,System.String,System.String,System.String,System.String,System.Action{System.Boolean})">
+            <summary>
+            This method starts the Merge tool process by given source file path, local file path, base file path and a result file path.
+            </summary>
+            <param name="sourceFilePath">Path to the source file. </param>
+            <param name="localFilePath">Path to the local file. </param>
+            <param name="baseFilePath">Path to the base file.</param>
+            <param name="baseFilePath">Path to the result file.</param>
+            <param name="visualStudioVersion">The Visual Studio version used by the current user. </param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.DiffMergeToolStarter.FindDiffMergeToolFullPath(System.String)">
+            <summary>
+            This method returns the path to the default DiffMerge tool used by Visual Studio to merge files. 
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.DiffMergeToolStarter.GetDiffMergeToolName(System.String)">
+            <summary>
+            Returns the name of the DiffMerge tool depending on the Visual Studio version.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.DiffMergeToolStarter.GetDiffArguments(System.String,System.String,System.String)">
+            <summary>
+            Generates arguments in the form of a string that can be used to start a Diff tool using the Process class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.DiffMergeToolStarter.GetMergeArguments(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Generates arguments in the form of a string that can be used to start a Merge tool using the Process class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.DiffMergeToolStarter.StartDiffMergeToolProcess(System.String,System.String,System.String,System.Action{System.Boolean})">
+            <summary>
+            Starts a DiffMerge tool using the Process class by given arguments and version of Visual Studio.
+            </summary>
+            <param name="arguments"></param>
+            <param name="visualStudioVersion"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.DiffMergeToolStarter.StartProccess(System.Diagnostics.ProcessStartInfo,System.String,System.String,System.Action{System.Boolean})">
+            <summary>
+            Starts a new Process by using a ProcessStartInfo. The started process doesn't open a command prompt window.
+            </summary>
+            <param name="processInfo"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.StringExtensions.ToUtcDateTime(System.String)">
+            <summary>
+            Converts a given string to a utc datetime
+            </summary>
+            <param name="datetimeString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.StringExtensions.ReplaceFirst(System.String,System.String,System.String)">
+            <summary>
+            Replaces the first occurance of a string with another string
+            </summary>
+            <param name="text"></param>
+            <param name="search"></param>
+            <param name="replace"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.StringExtensions.ReplaceFirstPartOfAPath(System.String,System.String,System.String)">
+            <summary>
+            Replace first occurance of a path string within another path string making sure it replaces the chunks correct. 
+            </summary>
+            <param name="path"></param>
+            <param name="search"></param>
+            <param name="replace"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.StringExtensions.StartsWithPath(System.String,System.String)">
+            <summary>
+            Checks if a path starts with another path.
+            </summary>
+            <param name="path"></param>
+            <param name="search"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Telerik.Sitefinity.Thunder.CodeSync.SyncItemComparer">
+            <summary>
+            Compares two sync files
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncItemExtensions.UpdateCalculatedPaths(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String,System.String)">
+            <summary>
+            Update the calculated paths of all items in result of changed path an the fly.
+            </summary>
+            <param name="items"></param>
+            <param name="oldCalculatedPath"></param>
+            <param name="newCalculatedPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncItemExtensions.UpdateCalculatedPath(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem,System.String,System.String)">
+            <summary>
+            Update the calculated path of the item provided.
+            </summary>
+            <param name="item"></param>
+            <param name="oldCalculatedPath"></param>
+            <param name="newCalculatedPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncItemExtensions.UpdateCalculatedBasePaths(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.String,System.String)">
+            <summary>
+            Update the base paths in all items. This is a result of a change in the base files structure or some other change.
+            </summary>
+            <param name="items"></param>
+            <param name="oldBasePath"></param>
+            <param name="newBasePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncItemExtensions.CalculatePaths(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.Collections.Generic.IEnumerable{Telerik.Sitefinity.Thunder.CodeSync.Contracts.FileMapping},System.Collections.Generic.IEnumerable{Telerik.Sitefinity.Thunder.CodeSync.Contracts.FileMapping})">
+            <summary>
+            Calculates the path for all the sync files
+            </summary>
+            <param name="items"></param>
+            <param name="baseFilesMappings"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncItemExtensions.MarkFilesWithConflicts(System.Linq.IQueryable{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncShot)">
+            <summary>
+            Mark all files in conflicts comparer to a given sync shot
+            </summary>
+            <param name="items"></param>
+            <param name="syncShot"></param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncSerializer.#ctor">
+            <summary>
+            SyncSerializer constructor
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncSerializer.CreateLastSyncShotXmlFile(System.IO.DirectoryInfo,System.IO.FileInfo)">
+            <summary>
+            Creates am empty last sync shot xml files
+            </summary>
+            <param name="sourceDirectory"></param>
+            <param name="destinationFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncSerializer.SerializeDirectoryToLastSyncShotXmlFile(System.IO.DirectoryInfo,System.IO.FileInfo)">
+            <summary>
+            Seriazlizes a directory to a xml file
+            </summary>
+            <param name="sourceDirectory"></param>
+            <param name="destinationFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncSerializer.DeserializeLastSyncShotXmlFile(System.IO.FileInfo)">
+            <summary>
+            Deserializes a xml file to a syncshot
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncSerializer.SaveSyncFileInfoInTheLastSyncShotXml(System.Collections.Generic.List{Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncItem},System.IO.FileInfo)">
+            <summary>
+            Saves sync items info in the xml file
+            </summary>
+            <param name="syncItems"></param>
+            <param name="fileInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncSerializer.SerializeCalculatedSyncShot(Telerik.Sitefinity.Thunder.CodeSync.Contracts.SyncShot,System.IO.FileInfo)">
+            <summary>
+            Serializes the calculated syncshot
+            </summary>
+            <param name="syncShot"></param>
+            <param name="lastSyncFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncSerializer.GetFlatDirectoryXml(System.IO.DirectoryInfo)">
+            <summary>
+            Creates a xml representation of a directory structure
+            </summary>
+            <param name="directory"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Thunder.CodeSync.SyncSerializer.DeserializeCodeSyncServerSettings(System.IO.FileInfo)">
+            <summary>
+            Deserializes the server settings file
+            </summary>
+            <param name="settingsFileInfo"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

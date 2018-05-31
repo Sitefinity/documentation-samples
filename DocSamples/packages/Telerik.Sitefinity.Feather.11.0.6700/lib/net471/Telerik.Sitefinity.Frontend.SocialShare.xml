@@ -1,0 +1,500 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Telerik.Sitefinity.Frontend.SocialShare</name>
+    </assembly>
+    <members>
+        <member name="T:Telerik.Sitefinity.Frontend.SocialShare.InterfaceMappings">
+            <summary>
+            This class is used to describe the bindings which will be used by the Ninject container when resolving classes
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.InterfaceMappings.Load">
+            <summary>
+            Loads the module into the kernel.
+            </summary>
+        </member>
+        <member name="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Controllers.SocialShareController">
+            <summary>
+            This class represents the controller of Social Share widget.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Controllers.SocialShareController.TemplateName">
+            <summary>
+            Gets or sets the name of the template that widget will be displayed.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Controllers.SocialShareController.Model">
+            <summary>
+            Gets the Social share widget model.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Controllers.SocialShareController.SerializedSocialShareOptionsList">
+            <summary>
+            Gets or sets the serialized list of social share options.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Controllers.SocialShareController.SocialShareSettings">
+            <summary>
+            Gets the social share settings.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Controllers.SocialShareController.SocialShareGroups">
+            <summary>
+            Gets the list of <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareGroup" /> objects.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Controllers.SocialShareController.SocialShareOptionsList">
+            <summary>
+            Gets the list of <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareGroup" /> objects based on Sitefinity settings.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Controllers.SocialShareController.Index">
+            <summary>
+            Default Action
+            </summary>
+            <returns>
+            The <see cref="T:System.Web.Mvc.ActionResult"/>.
+            </returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Controllers.SocialShareController.HandleUnknownAction(System.String)">
+            <summary>
+            Called when a request matches this controller, but no method with the specified action name is found in the controller.
+            </summary>
+            <param name="actionName">The name of the attempted action.</param>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Controllers.SocialShareController.InitializeModel">
+            <summary>
+            Initializes the model.
+            </summary>
+            <returns>
+            The <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.ISocialShareModel"/>.
+            </returns>
+        </member>
+        <member name="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.ISocialShareModel">
+            <summary>
+            Classes that implement this interface could be used as a model for Social Share widget.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.ISocialShareModel.SocialButtons">
+            <summary>
+            Gets the social buttons
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.ISocialShareModel.CssClass">
+            <summary>
+            Gets or sets the CSS class that will be applied on the wrapper div of the widget.
+            </summary>
+            <value>
+            The CSS class.
+            </value>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.ISocialShareModel.ItemTitle">
+            <summary>
+            Gets or sets the data item's title we wish to share
+            </summary>
+            <value>
+            The shared item's Title
+            </value>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.ISocialShareModel.InitializeSocialShareButtons(System.Collections.Generic.IList{Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareGroup})">
+            <summary>
+            Initialize the selected social share options.
+            </summary>
+        </member>
+        <member name="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialButtonModel">
+            <summary>
+            SocialButton Model
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialButtonModel.ButtonName">
+            <summary>
+            Gets or sets the name of the button.
+            </summary>
+            <value>
+            The name of the button.
+            </value>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialButtonModel.AddText">
+            <summary>
+            Gets or sets a value indicating whether [add text].
+            </summary>
+            <value>
+              <c>true</c> if [add text]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialButtonModel.BigSize">
+            <summary>
+            Gets or sets a value indicating whether [big size].
+            </summary>
+            <value>
+              <c>true</c> if [big size]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialButtonModel.DisplayCounters">
+            <summary>
+            Gets or sets a value indicating whether [display counters].
+            </summary>
+            <value>
+              <c>true</c> if [display counters]; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialButtonModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialButtonModel"/> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialButtonModel.#ctor(System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialButtonModel"/> class.
+            </summary>
+            <param name="buttonName">Name of the button.</param>
+            <param name="addText">if set to <c>true</c> [add text].</param>
+            <param name="displayCounters">if set to <c>true</c> [display counters].</param>
+            <param name="bigSize">if set to <c>true</c> [big size].</param>
+        </member>
+        <member name="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareGroup">
+            <summary>
+            Class that is used for grouping social share options.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareGroup.#ctor(System.Collections.Generic.IEnumerable{Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareOption})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareGroup" /> class.
+            </summary>
+            <param name="groups">The groups of <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareOption" /> objects.</param>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareGroup.Groups">
+            <summary>
+            Gets or sets the groups of <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareOption" /> objects.
+            </summary>
+        </member>
+        <member name="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareOption">
+            <summary>
+            This class represents a Social Share option with a resource localization of its text.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareOption.#ctor(System.String,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareOption" /> class.
+            </summary>
+            <param name="key">The social share option key.</param>
+            <param name="isChecked">The value indicating whether social share option is checked.</param>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareOption.Key">
+            <summary>
+            Gets the social share option key.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareOption.Label">
+            <summary>
+            Gets the social share option label.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareOption.IsChecked">
+            <summary>
+            Gets the value indicating whether social share option is checked.
+            </summary>
+        </member>
+        <member name="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareModel">
+            <summary>
+            This class represents the model used for Social Share widget.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareModel" /> class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareModel.SocialButtons">
+            <summary>
+            Gets the social buttons
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareModel.CssClass">
+            <summary>
+            Gets or sets the CSS class that will be applied on the wrapper div of the widget.
+            </summary>
+            <value>
+            The CSS class.
+            </value>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareModel.ItemTitle">
+            <summary>
+            Gets or sets the data item's title we wish to share
+            </summary>
+            <value>
+            The shared item's Title
+            </value>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareModel.SocialShareSettings">
+            <summary>
+            Gets the social share settings.
+            </summary>
+            <value>The social share settings.</value>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareModel.InitializeSocialShareButtons(System.Collections.Generic.IList{Telerik.Sitefinity.Frontend.SocialShare.Mvc.Models.SocialShareGroup})">
+            <summary>
+            Initialize the selected social share options.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources" /> class.
+            </summary>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.#ctor(Telerik.Sitefinity.Localization.Data.ResourceDataProvider)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources" /> class.
+            </summary>
+            <param name="dataProvider">The data provider.</param>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.SocialShareResourcesTitle">
+            <summary>
+            Gets Title for the Social Share widget resources class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.SocialShareResourcesDescription">
+            <summary>
+            Gets Description for the Social Share widget resources class.
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.SocialShareOptions">
+            <summary>
+            Gets phrase: Which sharing options you want to use?
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.Template">
+            <summary>
+            Gets phrase: Template
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.MoreOptions">
+            <summary>
+            Gets phrase: More options
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.CssClasses">
+            <summary>
+            Gets phrase : CSS classes
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.Facebook">
+            <summary>
+            Gets phrase: Facebook
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.Twitter">
+            <summary>
+            Gets phrase: Twitter
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.GooglePlusOne">
+            <summary>
+            Gets phrase: Twitter
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.LinkedIn">
+            <summary>
+            Gets phrase: LinkedIn
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.Digg">
+            <summary>
+            Gets phrase: Digg
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.Blogger">
+            <summary>
+            Gets phrase: Blogger
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.Tumblr">
+            <summary>
+            Gets phrase: Tumblr
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.GoogleBookmarks">
+            <summary>
+            Gets phrase: GoogleBookmarks
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.MySpace">
+            <summary>
+            Gets phrase: MySpace
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.StumbleUpon">
+            <summary>
+            Gets phrase: Stumble upon
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.Reddit">
+            <summary>
+            Gets phrase: Reddit
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.MailTo">
+            <summary>
+            Gets phrase: MailTo
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.Mvc.StringResources.SocialShareResources.Delicious">
+            <summary>
+            Gets phrase: Delicious
+            </summary>
+        </member>
+        <member name="T:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons">
+            <summary>
+            Html helpers for the social share buttons
+            </summary>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.ShareUrl">
+            <summary>
+            Gets the URL of the page you want to share.
+            </summary>
+            <value>The page URL.</value>
+        </member>
+        <member name="P:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.PageTitle">
+            <summary>
+            Gets the title of the page you want to share.
+            </summary>
+            <value>The page title.</value>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.FacebookButton(System.Web.Mvc.HtmlHelper,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Facebook button.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="showCount">if set to <c>true</c> shows count.</param>
+            <param name="isLarge">if set to <c>true</c> is large.</param>
+            <param name="addText">if set to <c>true</c> [add text].</param>
+            <returns>FacebookButton Html</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.TwitterButton(System.Web.Mvc.HtmlHelper,System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Twitter Button HTML
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="showCount">if set to <c>true</c> shows count.</param>
+            <param name="isLarge">if set to <c>true</c> is large.</param>
+            <param name="addText">if set to <c>true</c> adds text.</param>
+            <param name="textToShare">The text to share.</param>
+            <returns>
+            TwitterButton Html
+            </returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.TwitterButton(System.Web.Mvc.HtmlHelper,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Twitter Button HTML
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="showCount">if set to <c>true</c> shows count.</param>
+            <param name="isLarge">if set to <c>true</c> is large.</param>
+            <param name="addText">if set to <c>true</c> adds text.</param>
+            <returns>
+            TwitterButton Html
+            </returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.LinkedInButton(System.Web.Mvc.HtmlHelper,System.Boolean)">
+            <summary>
+            LinkedIn button
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="showCount">if set to <c>true</c> shows count.</param>
+            <returns>
+            LinkedInButton Html
+            </returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.GooglePlusOneButton(System.Web.Mvc.HtmlHelper,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            GooglePlus One Button
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="showCount">if set to <c>true</c> shows count.</param>
+            <param name="isLarge">if set to <c>true</c> is large.</param>
+            <param name="addText">if set to <c>true</c> [add text].</param>
+            <returns>
+            GooglePlusButton Html
+            </returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.BloggerButton(System.Web.Mvc.HtmlHelper,System.Boolean)">
+            <summary>
+            Bloggers the button.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="addText">if set to <c>true</c> adds text.</param>
+            <returns>BloggerButton Html</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.ThumblerButton(System.Web.Mvc.HtmlHelper,System.Boolean)">
+            <summary>
+            Thumbler button.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="addText">if set to <c>true</c> adds text.</param>
+            <returns>ThumblerButton Html</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.GoogleBookmarksButton(System.Web.Mvc.HtmlHelper,System.Boolean)">
+            <summary>
+            Google bookmarks button.
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="addText">if set to <c>true</c> adds text.</param>
+            <returns>GoogleBookmarksButton Html</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.DeliciousButton(System.Web.Mvc.HtmlHelper,System.Boolean)">
+            <summary>
+            DeliciousButton Html
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="addText">if set to <c>true</c> [add text].</param>
+            <returns>Gets DeliciousButton Html</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.RedditButton(System.Web.Mvc.HtmlHelper,System.Boolean)">
+            <summary>
+            RedditButton Html
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="addText">if set to <c>true</c> adds text.</param>
+            <returns>Reddit Button Html</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.StumbleUponButton(System.Web.Mvc.HtmlHelper,System.Boolean)">
+            <summary>
+            StumbleUponButton Html
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="addText">if set to <c>true</c> adds text.</param>
+            <returns>StumbleUpon Button Html</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.DiggButton(System.Web.Mvc.HtmlHelper,System.Boolean)">
+            <summary>
+            Digg Button Html
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="addText">if set to <c>true</c> adds text.</param>
+            <returns>DiggButton Html</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.MySpaceButton(System.Web.Mvc.HtmlHelper,System.Boolean)">
+            <summary>
+            MySpace Button Html
+            </summary>
+            <param name="helper">The helper.</param>
+            <param name="addText">if set to <c>true</c> adds text.</param>
+            <returns>MySpaceButton Html</returns>
+        </member>
+        <member name="M:Telerik.Sitefinity.Frontend.SocialShare.SocialShareHelpers.SocialShareButtons.CreateLinkButton(System.Boolean,System.String,System.String,System.String,System.String)">
+            <summary>
+            Creates the link button.
+            </summary>
+            <param name="addText">if set to <c>true</c> adds text.</param>
+            <param name="baseUrl">The base URL.</param>
+            <param name="linkText">The link text.</param>
+            <param name="tooltipText">The tooltip text.</param>
+            <param name="cssClass">The CSS class.</param>
+            <returns>
+            CreateLinkButton Html
+            </returns>
+        </member>
+    </members>
+</doc>

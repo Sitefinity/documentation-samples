@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform" xmlns:asm="urn:schemas-microsoft-com:asm.v1">
+  <configSections>
+    <section name="microsoft.identityModel" type="Microsoft.IdentityModel.Configuration.MicrosoftIdentityModelSection, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+    <section name="system.identityModel" type="System.IdentityModel.Configuration.SystemIdentityModelSection, System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)" />
+    <section name="system.identityModel.services" type="System.IdentityModel.Services.Configuration.SystemIdentityModelServicesSection, System.IdentityModel.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" xdt:Transform="InsertIfMissing" xdt:Locator="Match(name)"    />
+  </configSections>  
+  <appSettings>
+    <add key="aspnet:UseTaskFriendlySynchronizationContext" value="true" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
+    <add key="aspnet:UseHostHeaderForRequestUrl" value="true" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
+    <add key="ValidationSettings:UnobtrusiveValidationMode" value="None" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
+    <add key="sf:serviceStackEnableFeatures" value="Json,Html" xdt:Transform="InsertIfMissing" xdt:Locator="Match(key)" />
+  </appSettings>
+  <location path="RestApi/Sitefinity/packaging/archive/upload" xdt:Transform="Remove" xdt:Locator="Match(path)" />
+  <location path="RestApi/Sitefinity/packaging/archive/upload" xdt:Transform="InsertAfter(/configuration/system.web.webPages.razor)" >
+    <system.web>
+      <httpRuntime maxRequestLength="2097151" executionTimeout="7200" maxUrlLength="102400" maxQueryStringLength="102400" requestValidationType="Telerik.Sitefinity.Security.Claims.CustomRequestValidator, Telerik.Sitefinity" />
+    </system.web>
+    <system.webServer>
+      <security>
+        <requestFiltering>
+          <requestLimits maxAllowedContentLength="2147483648" />
+          <!--2GB-->
+        </requestFiltering>
+      </security>
+    </system.webServer>
+  </location>
+  <location path="sf/system" xdt:Transform="Remove" xdt:Locator="Match(path)" />
+  <location path="sf/system" xdt:Transform="InsertAfter(/configuration/system.web.webPages.razor)" >
+    <system.web>
+      <httpRuntime maxRequestLength="6048000" executionTimeout="7200" maxUrlLength="102400" maxQueryStringLength="102400" />
+    </system.web>
+    <system.webServer>
+      <security>
+        <requestFiltering>
+          <requestLimits maxAllowedContentLength="2147483648" />
+        </requestFiltering>
+      </security>
+    </system.webServer>
+  </location>
+  <system.web>
+    <httpRuntime targetFramework="4.7.1" xdt:Transform="SetAttributes(targetFramework)" />
+    <compilation targetFramework="4.7.1" xdt:Transform="SetAttributes(targetFramework)" />
+
+    <httpModules>
+      <add name="ClaimsPrincipalHttpModule" type="Microsoft.IdentityModel.Web.ClaimsPrincipalHttpModule, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+      <add name="SitefinityClaimsAuthenticationModule" type="Telerik.Sitefinity.Security.Claims.SitefinityClaimsAuthenticationModule, Telerik.Sitefinity" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+      <add name="SessionAuthenticationModule" type="Telerik.Sitefinity.Security.Claims.SitefinitySessionAuthenticationModule, Telerik.Sitefinity" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+    </httpModules>
+
+    <httpHandlers>
+      <add verb="*" path="Telerik.Sitefinity.LibrariesRadUploadHandler.ashx" type="Telerik.Sitefinity.Modules.Libraries.Web.LibrariesRadUploadHandler, Telerik.Sitefinity" xdt:Transform="Remove" xdt:Locator="Match(path)" />
+    </httpHandlers>
+  </system.web>
+  <system.webServer>
+    <validation validateIntegratedModeConfiguration="false" />
+    <modules runAllManagedModulesForAllRequests="true">
+      <add name="ClaimsPrincipalHttpModule" type="Microsoft.IdentityModel.Web.ClaimsPrincipalHttpModule, Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+      <add name="SitefinityClaimsAuthenticationModule" type="Telerik.Sitefinity.Security.Claims.SitefinityClaimsAuthenticationModule, Telerik.Sitefinity" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+      <add name="SessionAuthenticationModule" type="Telerik.Sitefinity.Security.Claims.SitefinitySessionAuthenticationModule, Telerik.Sitefinity" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+    </modules>
+
+    <handlers>
+      <remove name="Telerik.Sitefinity.LibrariesRadUploadHandler" xdt:Transform="Remove" xdt:Locator="Match(name)"/>
+      <add name="Telerik.Sitefinity.LibrariesRadUploadHandler" path="Telerik.Sitefinity.LibrariesRadUploadHandler.ashx" verb="*" type="Telerik.Sitefinity.Modules.Libraries.Web.LibrariesRadUploadHandler, Telerik.Sitefinity" xdt:Transform="Remove" xdt:Locator="Match(name)" />
+    </handlers>
+  </system.webServer>
+  <microsoft.identityModel xdt:Transform="Remove" />
+  <system.identityModel.services xdt:Transform="Remove" />
+  <system.identityModel xdt:Transform="Remove" />
+  <system.identityModel.services xdt:Transform="InsertAfter(/configuration/system.webServer)">
+    <federationConfiguration >
+      <wsFederation passiveRedirectEnabled="true" issuer="http://localhost" realm="http://localhost" requireHttps="false"  />
+      <cookieHandler requireSsl="false" />
+    </federationConfiguration>
+  </system.identityModel.services>
+  <system.identityModel xdt:Transform="InsertAfter(/configuration/system.webServer)">
+    <identityConfiguration>
+      <securityTokenHandlers>
+        <add type="Telerik.Sitefinity.Security.Claims.SWT.SWTSecurityTokenHandler, Telerik.Sitefinity" />
+      </securityTokenHandlers>
+      <audienceUris mode="Never" />
+      <issuerNameRegistry type="Telerik.Sitefinity.Security.Claims.CustomIssuerNameRegistry, Telerik.Sitefinity">
+        <trustedIssuers />
+      </issuerNameRegistry>
+      <issuerTokenResolver type="Telerik.Sitefinity.Security.Claims.SWT.WrapIssuerTokenResolver, Telerik.Sitefinity" />
+      <certificateValidation certificateValidationMode="None" />
+    </identityConfiguration>
+  </system.identityModel>
+</configuration>
