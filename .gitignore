@@ -2,9 +2,11 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs
-
-*.bin
-*.obj
 *.dll
-packages/*
+*.lic
+*.nupkg
+bin/
+obj/
+/packages
+/.nuget/NuGet.exe
+/.vs

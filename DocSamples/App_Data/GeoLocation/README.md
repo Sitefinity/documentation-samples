@@ -1,0 +1,1 @@
+﻿This folder is intended for you to place your personalization database files.
